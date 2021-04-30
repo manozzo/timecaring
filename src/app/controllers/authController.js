@@ -1,17 +1,16 @@
+require('dotenv').config();
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const mailer = require("../../modules/mailer");
 
-const { AUTHTOKEN } = process.env;
-
 const User = require("../models/user");
 
 const router = express.Router();
 
 function generateToken(params = {}) {
-  return jwt.sign(params, AUTHTOKEN, {
+  return jwt.sign(params, process.env.AUTHTOKEN, {
     expiresIn: 86400,
   });
 }
@@ -20,8 +19,9 @@ router.post("/register", async (req, res) => {
   const { email } = req.body;
 
   try {
-    if (await User.findOne({ email }))
+    if (await User.findOne({ email })) {
       return res.status(400).send({ error: "User already exists" });
+    }
 
     const user = await User.create(req.body);
 
@@ -118,11 +118,10 @@ router.post("/reset_password", async (req, res) => {
         .send({ error: "Token expired, generate a new one" });
 
     user.password = password;
-    
+
     await user.save();
 
     res.send();
-    
   } catch (err) {
     res.status(400).send({ error: "Cannot reset password, try again" });
   }
