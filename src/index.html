@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script src="./index2.js" defer></script>
+    <title>Time Caring</title>
+    <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">TIME CARING</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Criar
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Criar um projeto</a></li>
+                <li><a class="dropdown-item" href="#">Criar uma task</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+        </div>
+        <button
+          class="btn btn-secondary"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          RESUMO
+        </button>
+        </div>
+    </nav>
+    <main class="row g-0 d-sm-flex">
+      <section class="col-md-4 p-1 bg-warning order-md-2">
+        <h3 id="resumo">RESUMO</h3>
+        <p data-resumo class="fs-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta labore
+          pariatur explicabo cum architecto similique aliquam dolore asperiores
+          fugiat voluptatem distinctio fuga magni, nulla dolor perferendis
+          ipsum. Debitis, corrupti pariatur.
+        </p>
+      </section>
+      <div class="col-md-8 p-2 bg-success">
+        <section class="border bg-light rounded p-2">
+          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
+          <section class="container my-2 border rounded bg-white p-2">
+            <header class="d-flex justify-content-between">
+              <div class="">
+                <h5 class="bg-warning">Título da tarefa</h5>
+              </div>
+              <span class="">00:00</span>
+            </header>
+            <p class="fs-6">Nome da pessoa</p>
+            <div class="p-1 border mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+              facere quasi! Id animi consequatur libero aliquid unde repellat
+              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
+              nostrum accusantium. Deleniti.
+            </div>
+            <div class="border p-1">
+              <h6>Comentários:</h6>
+              <ul class="list-unstyled">
+                <li>Comentário 1</li>
+                <li>Comentário 2</li>
+              </ul>
+            </div>
+            <div class="progress mt-1">
+              <div
+                class="progress-bar progress-bar-striped"
+                role="progressbar"
+                style="width: 50%"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+          </section>
+          <footer>
+            <div class="input-group input-group-sm mt-2">
+              <span class="input-group-text" id="inputGroup-sizing-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-plus-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Insira sua task aqui..."
+              />
+            </div>
+          </footer>
+        </section>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">...</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
