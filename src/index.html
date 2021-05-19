@@ -21,7 +21,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <script src="./index2.js" defer></script>
+    <script src="./app/models/index.js" defer></script>
     <title>Time Caring</title>
     <style>
       * {
@@ -86,8 +86,11 @@
     </nav>
     <main class="row g-0 d-sm-flex">
       <div class="col-xl-3 p-2">
-        <section class="border bg-light rounded p-2">
-          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
+        <section id="project" class="border bg-light rounded p-2">
+          <header class="h4">
+            <p class="mb-1">Nome do Projeto</p>
+            <p class="fs-6 mb-1">4172/21</p>
+          </header>
           <section class="my-2 border rounded bg-white p-2">
             <header class="d-flex justify-content-between">
               <div>
@@ -137,6 +140,7 @@
                 </svg>
               </span>
               <input
+                id="addTask"
                 type="text"
                 class="form-control"
                 aria-label="Sizing example input"
@@ -146,8 +150,13 @@
             </div>
           </footer>
         </section>
-        <section class="border bg-light rounded p-2 mt-2">
-          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
+      </div>
+      <div class="col-xl-3 p-2">
+        <section id="project" class="border bg-light rounded p-1">
+          <header class="h4">
+            <p class="mb-1">Nome do Projeto</p>
+            <p class="fs-6 mb-1">4172/21</p>
+          </header>
           <section class="my-2 border rounded bg-white p-2">
             <header class="d-flex justify-content-between">
               <div>
@@ -209,132 +218,10 @@
       </div>
       <div class="col-xl-3 p-2">
         <section class="border bg-light rounded p-2">
-          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
-          <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
-              </div>
-              <span class="">00:00</span>
-            </header>
-            <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">Lorem ipsum dolor sit</div>
-            <div class="p-1">
-              <h6>Comentários:</h6>
-              <ul class="list-unstyled">
-                <li>Comentário 1</li>
-              </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
-        </section>
-      </div>
-      <div class="col-xl-3 p-2">
-        <section class="border bg-light rounded p-2">
-          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
-          <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
-              </div>
-              <span class="">00:00</span>
-            </header>
-            <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              facere quasi! Id animi consequatur libero aliquid unde repellat
-              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
-              nostrum accusantium. Deleniti. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Veniam cumque, ipsam ad, cum aliquam
-              rem dignissimos adipisci alias omnis animi nihil, vero perferendis
-              expedita nulla incidunt culpa fugit laudantium aspernatur! Lorem
-              ipsum dolor sit amet consectetur adipisicing elit. Enim beatae
-              amet odit ea cumque doloremque ut mollitia voluptatem nesciunt
-              magni quasi temporibus dicta dolorem, nisi numquam ullam quis. Ad,
-              ea?
-            </div>
-            <div class="p-1">
-              <h6>Comentários:</h6>
-              <ul class="list-unstyled">
-                <li>Comentário 1</li>
-                <li>Comentário 2</li>
-              </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
-        </section>
-      </div>
-      <div class="col-xl-3 p-2">
-        <section class="border bg-light rounded p-2">
-          <header class="h4 mb-2 mt-1">Nome do Projeto</header>
+          <header class="h4">
+            <p class="mb-1">Nome do Projeto</p>
+            <p class="fs-6 mb-1">4172/21</p>
+          </header>
           <section class="my-2 border rounded bg-white p-2">
             <header class="d-flex justify-content-between">
               <div>
@@ -367,6 +254,39 @@
               ></div>
             </div>
           </section>
+          <footer>
+            <div class="input-group input-group-sm mt-2">
+              <span class="input-group-text" id="inputGroup-sizing-lg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-plus-lg"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
+                  />
+                </svg>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Insira sua task aqui..."
+              />
+            </div>
+          </footer>
+        </section>
+      </div>
+      <div class="col-xl-3 p-2">
+        <section class="border bg-light rounded p-2">
+          <header class="h4">
+            <p class="mb-1">Nome do Projeto</p>
+            <p class="fs-6 mb-1">4172/21</p>
+          </header>
           <section class="my-2 border rounded bg-white p-2">
             <header class="d-flex justify-content-between">
               <div>
@@ -375,11 +295,17 @@
               <span class="">00:00</span>
             </header>
             <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">Lorem ipsum dolor sit</div>
+            <div class="p-1 mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+              facere quasi! Id animi consequatur libero aliquid unde repellat
+              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
+              nostrum accusantium. Deleniti.
+            </div>
             <div class="p-1">
               <h6>Comentários:</h6>
               <ul class="list-unstyled">
                 <li>Comentário 1</li>
+                <li>Comentário 2</li>
               </ul>
             </div>
             <div class="progress mt-1">
@@ -443,12 +369,12 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Dropdown button
+            Responsável
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a id="person1" class="dropdown-item" href="#">Person 1</a></li>
+            <li><a id="person2" class="dropdown-item" href="#">Person 2</a></li>
+            <li><a id="person3" class="dropdown-item" href="#">Person 3</a></li>
           </ul>
         </div>
         <div class="offcanvas-body">
