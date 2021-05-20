@@ -21,7 +21,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <script src="../js/index.js" defer></script>
+    <script src="../js/index.js" type="module" defer></script>
     <title>Time Caring</title>
     <style>
       * {
@@ -36,7 +36,7 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar  navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TIME CARING</a>
         <button
@@ -113,9 +113,22 @@
               </div>
               <ul class="dropdown-menu" aria-labelledby="projectBtn">
                 <li>
-                  <a role="button" type="button" data-bs-toggle="modal" data-bs-target="#taskModal" data-bs-whatever="@getbootstrap" class="dropdown-item" href="#">Adicionar uma tarefa</a>
+                  <a
+                    role="button"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#taskModal"
+                    data-bs-whatever="@getbootstrap"
+                    class="dropdown-item"
+                    href="#"
+                    >Adicionar uma tarefa</a
+                  >
                 </li>
-                <li><a class="dropdown-item" href="#">Excluir projeto</a></li>
+                <li>
+                  <a id="add-task" class="dropdown-item" href="#"
+                    >Excluir projeto</a
+                  >
+                </li>
                 <li>
                   <a data-priority="red" class="dropdown-item" href="#">
                     Prioridade
@@ -149,8 +162,15 @@
             </div>
           </header>
           <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between align-items-start position-relative">
-              <div class=" d-flex flex-column align-items-start">
+            <header
+              class="
+                d-flex
+                justify-content-between
+                align-items-start
+                position-relative
+              "
+            >
+              <div class="d-flex flex-column align-items-start">
                 <p class="h5">Título da tarefa</p>
                 <p class="h6">Responsável</p>
               </div>
@@ -175,6 +195,7 @@
           </section>
         </section>
       </div>
+      <!-- RESUMO DRAWER -->
       <div
         class="offcanvas offcanvas-end"
         tabindex="-1"
@@ -230,28 +251,74 @@
           </section>
         </div>
       </div>
-      <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+      <!-- TASK MODAL -->
+      <div
+        class="modal fade"
+        id="taskModal"
+        tabindex="-1"
+        aria-labelledby="taskModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="task-title" placeholder="Título da tarefa...">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header align-items-start">
+              <div class="col-11">
+                <h5 class="modal-title">Adicionar uma tarefa</h5>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
               <form>
                 <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Recipient:</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="mb-3">
-                  <label for="message-text" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
+                  <label for="modal-task-title" class="col-form-label"
+                    >Título da tarefa:
+                  </label>
+                  <input
+                    name="title"
+                    type="text"
+                    class="form-control mb-2"
+                    id="modal-task-title"
+                  />
+                  <label for="modal-person-task" class="col-form-label"
+                  >Responsável da tarefa:
+                </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="modal-person-task"
+                  />
+                  <label for="modal-task-description" class="col-form-label"
+                    >Descrição da tarefa:</label
+                  >
+                  <textarea
+                    maxlength="300"
+                    rows="3"
+                    class="form-control"
+                    id="modal-task-description"
+                  ></textarea>
+                  <label for="modal-duedate" class="col-form-label"
+                    >Data de conclusão:</label
+                  >
+                  <input type="date" id="modal-duedate" class="form-control" />
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Send message</button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+              <button type="submit" class="btn btn-success">
+                Salvar tarefa
+              </button>
             </div>
           </div>
         </div>

@@ -1,18 +1,18 @@
+import modalTaskInput from "./taskmodal.js";
+
 const project = document.getElementById("project");
 const redPriorityBtn = document.querySelector('[data-priority="red"]');
 const orangePriorityBtn = document.querySelector('[data-priority="orange"]');
 const yellowPriorityBtn = document.querySelector('[data-priority="yellow"]');
+const addTaskBtn = document.getElementById("add-task");
 
 function renderTaskElement() {
-  if (addTaskElement.value === "") {
-    return;
-  } else {
-    let section = document.createElement("section");
-    section.innerHTML = `
+  let section = document.createElement("section");
+  section.innerHTML = `
     <section class="my-2 border rounded bg-white p-2">
               <header class="d-flex justify-content-between">
                 <div>
-                  <h5>${addTaskElement.value}</h5>
+                  <h5>RONALDO</h5>
                 </div>
                 <span class="">00:00</span>
               </header>
@@ -30,27 +30,19 @@ function renderTaskElement() {
                   <li>Comentário 2</li>
                 </ul>
               </div>
-              <div class="progress mt-1">
-                <div
-                  class="progress-bar progress-bar-striped"
-                  role="progressbar"
-                  style="width: 50%"
-                  aria-valuenow="50"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
             </section>
     `;
-    return section;
-  }
+  return section;
 }
 
 function addTaskToProject() {
   const item = renderTaskElement();
   project.appendChild(item);
-  addTaskElement.value = "";
 }
+
+addTaskBtn.addEventListener("click", () => {
+  addTaskToProject();
+});
 
 redPriorityBtn.addEventListener("click", () => {
   project.className = "border rounded p-2 bg-danger";
