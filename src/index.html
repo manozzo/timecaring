@@ -27,6 +27,12 @@
       * {
         font-family: "Montserrat", sans-serif;
       }
+
+      .priority {
+        width: 1.1rem;
+        position: absolute;
+        right: 35%;
+      }
     </style>
   </head>
   <body>
@@ -87,9 +93,60 @@
     <main class="row g-0 d-sm-flex">
       <div class="col-xl-3 p-2">
         <section id="project" class="border bg-light rounded p-2">
-          <header class="h4">
-            <p class="mb-1">Nome do Projeto</p>
-            <p class="fs-6 mb-1">4172/21</p>
+          <header class="h4 d-flex justify-content-between">
+            <div>
+              <p class="mb-1">Nome do Projeto</p>
+              <p class="fs-6 mb-1">4172/21</p>
+            </div>
+            <div class="dropdown">
+              <div
+                role="button"
+                id="projectBtn"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="./assets/icons/icons8-ellipsis-30.png"
+                  alt="ellipsis"
+                  style="width: 25px"
+                />
+              </div>
+              <ul class="dropdown-menu" aria-labelledby="projectBtn">
+                <li>
+                  <a class="dropdown-item" href="#">Adicionar uma tarefa</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Excluir projeto</a></li>
+                <li>
+                  <a data-priority="red" class="dropdown-item" href="#">
+                    Prioridade
+                    <img
+                      class="priority"
+                      src="./assets/icons/redcircle.png"
+                      alt="high priority"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a data-priority="orange" class="dropdown-item" href="#">
+                    Prioridade<img
+                      class="priority"
+                      src="./assets/icons/orangecircle.png"
+                      alt="high priority"
+                      style="width: 1.1rem"
+                    />
+                  </a>
+                </li>
+                <li>
+                  <a data-priority="yellow" class="dropdown-item" href="#"
+                    >Prioridade<img
+                      class="priority"
+                      src="./assets/icons/yellowcircle.png"
+                      alt="high priority"
+                      style="width: 1.1rem"
+                  /></a>
+                </li>
+              </ul>
+            </div>
           </header>
           <section class="my-2 border rounded bg-white p-2">
             <header class="d-flex justify-content-between">
@@ -123,227 +180,6 @@
               ></div>
             </div>
           </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                id="addTask"
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
-        </section>
-      </div>
-      <div class="col-xl-3 p-2">
-        <section id="project" class="border bg-light rounded p-1">
-          <header class="h4">
-            <p class="mb-1">Nome do Projeto</p>
-            <p class="fs-6 mb-1">4172/21</p>
-          </header>
-          <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
-              </div>
-              <span class="">00:00</span>
-            </header>
-            <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              facere quasi! Id animi consequatur libero aliquid unde repellat
-              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
-              nostrum accusantium. Deleniti.
-            </div>
-            <div class="p-1">
-              <h6>Comentários:</h6>
-              <ul class="list-unstyled">
-                <li>Comentário 1</li>
-                <li>Comentário 2</li>
-              </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
-        </section>
-      </div>
-      <div class="col-xl-3 p-2">
-        <section class="border bg-light rounded p-2">
-          <header class="h4">
-            <p class="mb-1">Nome do Projeto</p>
-            <p class="fs-6 mb-1">4172/21</p>
-          </header>
-          <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
-              </div>
-              <span class="">00:00</span>
-            </header>
-            <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              facere quasi! Id animi consequatur libero aliquid unde repellat
-              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
-              nostrum accusantium. Deleniti.
-            </div>
-            <div class="p-1">
-              <h6>Comentários:</h6>
-              <ul class="list-unstyled">
-                <li>Comentário 1</li>
-                <li>Comentário 2</li>
-              </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
-        </section>
-      </div>
-      <div class="col-xl-3 p-2">
-        <section class="border bg-light rounded p-2">
-          <header class="h4">
-            <p class="mb-1">Nome do Projeto</p>
-            <p class="fs-6 mb-1">4172/21</p>
-          </header>
-          <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
-              </div>
-              <span class="">00:00</span>
-            </header>
-            <p class="fs-6">Nome da pessoa</p>
-            <div class="p-1 mb-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
-              facere quasi! Id animi consequatur libero aliquid unde repellat
-              consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
-              nostrum accusantium. Deleniti.
-            </div>
-            <div class="p-1">
-              <h6>Comentários:</h6>
-              <ul class="list-unstyled">
-                <li>Comentário 1</li>
-                <li>Comentário 2</li>
-              </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
-            </div>
-          </section>
-          <footer>
-            <div class="input-group input-group-sm mt-2">
-              <span class="input-group-text" id="inputGroup-sizing-lg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-plus-lg"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"
-                  />
-                </svg>
-              </span>
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-                placeholder="Insira sua task aqui..."
-              />
-            </div>
-          </footer>
         </section>
       </div>
       <div
