@@ -21,7 +21,7 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <script src="./app/models/index.js" defer></script>
+    <script src="../js/index.js" defer></script>
     <title>Time Caring</title>
     <style>
       * {
@@ -36,7 +36,7 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TIME CARING</a>
         <button
@@ -106,14 +106,14 @@
                 aria-expanded="false"
               >
                 <img
-                  src="./assets/icons/icons8-ellipsis-30.png"
+                  src="../../assets/icons/icons8-ellipsis-30.png"
                   alt="ellipsis"
                   style="width: 25px"
                 />
               </div>
               <ul class="dropdown-menu" aria-labelledby="projectBtn">
                 <li>
-                  <a class="dropdown-item" href="#">Adicionar uma tarefa</a>
+                  <a role="button" type="button" data-bs-toggle="modal" data-bs-target="#taskModal" data-bs-whatever="@getbootstrap" class="dropdown-item" href="#">Adicionar uma tarefa</a>
                 </li>
                 <li><a class="dropdown-item" href="#">Excluir projeto</a></li>
                 <li>
@@ -121,7 +121,7 @@
                     Prioridade
                     <img
                       class="priority"
-                      src="./assets/icons/redcircle.png"
+                      src="../../assets/icons/redcircle.png"
                       alt="high priority"
                     />
                   </a>
@@ -130,7 +130,7 @@
                   <a data-priority="orange" class="dropdown-item" href="#">
                     Prioridade<img
                       class="priority"
-                      src="./assets/icons/orangecircle.png"
+                      src="../../assets/icons/orangecircle.png"
                       alt="high priority"
                       style="width: 1.1rem"
                     />
@@ -140,7 +140,7 @@
                   <a data-priority="yellow" class="dropdown-item" href="#"
                     >Prioridade<img
                       class="priority"
-                      src="./assets/icons/yellowcircle.png"
+                      src="../../assets/icons/yellowcircle.png"
                       alt="high priority"
                       style="width: 1.1rem"
                   /></a>
@@ -149,35 +149,28 @@
             </div>
           </header>
           <section class="my-2 border rounded bg-white p-2">
-            <header class="d-flex justify-content-between">
-              <div>
-                <h5>Título da tarefa</h5>
+            <header class="d-flex justify-content-between align-items-start position-relative">
+              <div class=" d-flex flex-column align-items-start">
+                <p class="h5">Título da tarefa</p>
+                <p class="h6">Responsável</p>
               </div>
-              <span class="">00:00</span>
+              <div class="d-flex flex-column align-items-end">
+                <span>00:00</span>
+                <span>25/12/2021</span>
+              </div>
             </header>
-            <p class="fs-6">Nome da pessoa</p>
             <div class="p-1 mb-2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
               facere quasi! Id animi consequatur libero aliquid unde repellat
               consequuntur est voluptatum maxime quis, quo ullam, eos voluptatem
               nostrum accusantium. Deleniti.
             </div>
-            <div class="p-1">
+            <div>
               <h6>Comentários:</h6>
-              <ul class="list-unstyled">
+              <ul class="list-unstyled m-0">
                 <li>Comentário 1</li>
                 <li>Comentário 2</li>
               </ul>
-            </div>
-            <div class="progress mt-1">
-              <div
-                class="progress-bar progress-bar-striped"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              ></div>
             </div>
           </section>
         </section>
@@ -235,6 +228,32 @@
               </div>
             </section>
           </section>
+        </div>
+      </div>
+      <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" id="task-title" placeholder="Título da tarefa...">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <input type="text" class="form-control" id="recipient-name">
+                </div>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Message:</label>
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Send message</button>
+            </div>
+          </div>
         </div>
       </div>
     </main>

@@ -57,9 +57,11 @@ redPriorityBtn.addEventListener("click", () => {
 });
 
 orangePriorityBtn.addEventListener("click", () => {
-  project.className = "border rounded p-2 bg-success";
+  project.className = "border rounded p-2";
+  project.style.backgroundColor = "orange";
 });
 
 yellowPriorityBtn.addEventListener("click", () => {
-  project.className = "border rounded p-2 bg-warning";
+  project.className = "border rounded p-2";
+  project.style.backgroundColor = "yellow";
 });
