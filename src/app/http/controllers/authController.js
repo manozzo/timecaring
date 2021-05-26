@@ -1,11 +1,11 @@
-require('dotenv').config();
+require('dotenv').config({path: 'C:/Users/Manozzo/Documents/Projects/timecaring/.env'});
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
-const mailer = require("../../modules/mailer");
+const mailer = require("../../../modules/mailer");
 
-const User = require("../models/user");
+const User = require("../../models/user");
 
 const router = express.Router();
 
@@ -17,16 +17,14 @@ function generateToken(params = {}) {
 
 router.post("/register", async (req, res) => {
   const { email } = req.body;
-
+  
   try {
     if (await User.findOne({ email })) {
       return res.status(400).send({ error: "User already exists" });
     }
 
     const user = await User.create(req.body);
-
     user.password = undefined;
-
     return res.send({
       user,
       token: generateToken({ id: user.id }),

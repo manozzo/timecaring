@@ -1,5 +1,3 @@
-import modalTaskInput from "./taskmodal.js";
-
 const project = document.getElementById("project");
 const redPriorityBtn = document.querySelector('[data-priority="red"]');
 const orangePriorityBtn = document.querySelector('[data-priority="orange"]');
