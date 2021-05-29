@@ -4,7 +4,7 @@ function errorMessage(message) {
   return small;
 }
 
-function validateForm() {
+function validateLogin() {
   var modalTaskTitle = document.getElementById("modal-task-title");
   var modalPersonTitle = document.getElementById("modal-person-task");
   var modalTaskDescription = document.getElementById("modal-task-description");
@@ -43,10 +43,6 @@ function validateForm() {
     modalDuedate.parentNode.insertBefore($message, modalDuedate.nextSibling);
     return;
   }
-//   var myModal = new bootstrap.Modal(document.getElementById('taskModal'));
-//   myModal.hide();
-
-//   document.getElementById('taskModal').modal('hide')
 
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
