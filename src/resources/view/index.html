@@ -15,14 +15,14 @@
       crossorigin="anonymous"
       defer
     ></script>
-    
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <script src="../js/taskform.js" type="text/javascript" defer></script>
+    <script src="../js/validateform.js" type="text/javascript" defer></script>
     <script src="../js/index.js" type="module" defer></script>
     <title>Time Caring</title>
     <style>
@@ -66,7 +66,18 @@
                 Criar
               </a>
               <ul class="dropdown-menu w-50" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Criar um projeto</a></li>
+                <li>
+                  <a
+                    role="button"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-bs-whatever="@getbootstrap"
+                    class="dropdown-item"
+                    href="#"
+                    >Criar um projeto</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -309,7 +320,12 @@
                   <label for="modal-duedate" class="col-form-label"
                     >Data de conclusão:</label
                   >
-                  <input type="date" id="modal-duedate" class="form-control" required/>
+                  <input
+                    type="date"
+                    id="modal-duedate"
+                    class="form-control"
+                    required
+                  />
                 </div>
               </div>
               <div class="modal-footer">
@@ -320,7 +336,11 @@
                 >
                   Fechar
                 </button>
-                <button type="button" class="btn btn-success" onclick="validateForm()">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  onclick="validateTaskForm()"
+                >
                   Salvar tarefa
                 </button>
               </div>
@@ -328,16 +348,91 @@
           </div>
         </div>
       </div>
-      <div class="toast position-fixed bottom-0 end-0 p-3 z-1000" role="alert" aria-live="assertive" aria-atomic="true">
+      <!-- PROJECT MODAL -->
+      <div
+        class="modal fade"
+        id="projectModal"
+        tabindex="-1"
+        aria-labelledby="projectModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header align-items-start">
+              <div class="col-11">
+                <h5 class="modal-title">Adicionar um projeto</h5>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form id="project-form" method="POST" action="">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="modal-project-title" class="col-form-label"
+                    >Título do projeto:
+                  </label>
+                  <input
+                    maxlength="40"
+                    name="title"
+                    type="text"
+                    class="form-control mb-1"
+                    id="modal-project-title"
+                    required
+                  />
+                  <label for="modal-project-number" class="col-form-label"
+                    >Número do projeto:
+                  </label>
+                  <input
+                    maxlength="10"
+                    type="text"
+                    class="form-control"
+                    id="modal-project-number"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-bs-dismiss="modal"
+                >
+                  Fechar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  onclick="validateProjectForm()"
+                >
+                  Salvar projeto
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="toast position-fixed bottom-0 end-0 p-3 z-1000"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
         <div class="toast-header">
           <!-- <img src="..." class="rounded me-2" alt="..."> -->
           <strong class="me-auto">Bootstrap</strong>
           <small>11 mins ago</small>
-          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
         </div>
-        <div class="toast-body">
-          Hello, world! This is a toast message.
-        </div>
+        <div class="toast-body">Hello, world! This is a toast message.</div>
       </div>
     </main>
   </body>
