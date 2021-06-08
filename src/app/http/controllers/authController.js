@@ -11,11 +11,6 @@ const User = require("../../models/user");
 
 const router = express.Router();
 
-require("../../../routes/index")(app);
-
-app.use(express.json());
-app.use(urlencoded({ extended: false }));
-
 function generateToken(params = {}) {
   return jwt.sign(params, process.env.AUTHTOKEN, {
     expiresIn: 86400,
