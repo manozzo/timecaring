@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "workbench.preferredDarkColorTheme": "Monokai",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Andromeda Italic",
+    "screencastMode.mouseIndicatorColor": "#C22C23"
+}
