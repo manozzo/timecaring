@@ -38,6 +38,7 @@ router.post("/register", async (req, res) => {
 
 router.post("/authenticate", async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body);
 
   const user = await User.findOne({ email }).select("+password");
 

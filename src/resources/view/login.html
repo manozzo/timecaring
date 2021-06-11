@@ -34,7 +34,7 @@
       <div class="h1 container m-auto text-center font mt-5">TIME CARING</div>
     </nav>
     <main>
-        <form action="/auth/authenticate" method="POST">
+        <form id="login-form" action="/auth/authenticate" method="POST">
       <div class="container mt-3">
             <div class="mb-4">
               <label for="login-email" class="form-label mb-1"
@@ -58,7 +58,7 @@
                 required
               />
             </div>
-            <button type="button" class="btn btn-dark" onclick="validateLoginForm()">Entrar</button>
+            <button type="submit" class="btn btn-dark" onclick="validateLoginForm()">Entrar</button>
           </form>
       </div>
     </main>

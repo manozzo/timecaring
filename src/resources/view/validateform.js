@@ -54,6 +54,7 @@ function validateTaskForm() {
 function validateLoginForm() {
   var loginEmail = document.getElementById("login-email");
   var loginPassword = document.getElementById("login-password");
+  var loginForm = document.getElementById("login-form");
 
   var $error = document.getElementsByClassName("error");
   while ($error.length > 0) $error[0].remove();
@@ -79,6 +80,8 @@ function validateLoginForm() {
   //   myModal.hide();
 
   //   document.getElementById('taskModal').modal('hide')
+
+
 
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
@@ -116,9 +119,11 @@ function validateProjectForm() {
 
   //   document.getElementById('taskModal').modal('hide')
 
+  loginFormrm.submit();
+
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
     return new bootstrap.Toast(toastEl);
   });
   toastList.forEach((toast) => toast.show());
-}
+};

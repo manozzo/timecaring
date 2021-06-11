@@ -12,7 +12,7 @@ const staticAssetsDir = path.join(__dirname, "resources/assets");
 const staticLoginDir = path.join(__dirname, "resources/view/login.html");
 
 app.use(express.json());
-// app.use(urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/", express.static(staticAssetsDir));
 app.use("/", express.static(staticViewsDir));
