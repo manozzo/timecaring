@@ -5,7 +5,7 @@ const yellowPriorityBtn = document.querySelector('[data-priority="yellow"]');
 const addTaskBtn = document.getElementById("add-task");
 
 function renderTaskElement() {
-  let section = document.createElement("section");
+    let section = document.createElement("section");
   section.innerHTML = `
     <section class="my-2 border rounded bg-white p-2">
               <header class="d-flex justify-content-between">

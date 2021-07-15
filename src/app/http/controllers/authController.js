@@ -36,23 +36,30 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.post("/authenticate", async (req, res) => {
+router.post("/authenticate", async (req, res, next) => {
+  
   const { email, password } = req.body;
   console.log(req.body);
 
   const user = await User.findOne({ email }).select("+password");
-
+  
   if (!user) return res.status(400).send({ error: "User not found" });
 
   if (!(await bcrypt.compare(password, user.password)))
     return res.status(400).send({ error: "Invalid password" });
 
   user.password = undefined;
-
-  const token = res.send({
-    user,
-    token: generateToken({ id: user.id }),
-  });
+  
+  res.redirect("/");
+  console.log({
+       user,
+       token: generateToken({ id: user.id }),
+     });
+  // const token = res.send({
+  //   user,
+  //   token: generateToken({ id: user.id }),
+  // });
+  
 });
 
 router.post("/forgot_password", async (req, res) => {

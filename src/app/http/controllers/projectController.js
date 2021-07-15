@@ -32,12 +32,13 @@ router.get("/:projectId", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
-    const { title, description, tasks } = req.body;
+    const { title, projectNumber, tasks } = req.body;
 
     const project = await Project.create({
       title,
-      description,
+      projectNumber,
       user: req.userId,
     });
 

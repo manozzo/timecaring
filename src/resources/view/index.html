@@ -304,6 +304,7 @@
                     maxlength="40"
                     type="text"
                     class="form-control"
+                    name="taskUser"
                     id="modal-person-task"
                     required
                   />
@@ -328,10 +329,7 @@
                   />
                 </div>
               </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-danger"
+              <div class="modal-footer">title
                   data-bs-dismiss="modal"
                 >
                   Fechar
@@ -369,7 +367,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <form id="project-form" method="POST" action="">
+            <form id="project-form" method="POST" action="/projects">
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="modal-project-title" class="col-form-label"
@@ -389,6 +387,7 @@
                   <input
                     maxlength="10"
                     type="text"
+                    name="projectNumber"
                     class="form-control"
                     id="modal-project-number"
                     required
@@ -404,9 +403,8 @@
                   Fechar
                 </button>
                 <button
-                  type="button"
+                  type="submit"
                   class="btn btn-success"
-                  onclick="validateProjectForm()"
                 >
                   Salvar projeto
                 </button>

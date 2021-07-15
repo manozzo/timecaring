@@ -119,7 +119,7 @@ function validateProjectForm() {
 
   //   document.getElementById('taskModal').modal('hide')
 
-  loginFormrm.submit();
+  
 
   var toastElList = [].slice.call(document.querySelectorAll(".toast"));
   var toastList = toastElList.map(function (toastEl) {
